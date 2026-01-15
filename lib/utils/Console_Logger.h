@@ -2,17 +2,19 @@
 #define CONSOLE_LOGGER
 
 typedef struct {
-    void (*OutputLog)(void *self);
+    void (*OutputLog)(char LogInput, void *self);
 } OutputLogger;
 
-static void OutputLog() {
-
+static void OutputLog(char LogInput, void *self) {
+    
 }
 
-void CreateLogger() {
+static OutputLogger CreateLogger() {
     OutputLogger NewLogger = {
-
+        .OutputLog = OutputLog,
     };
+    // Pass the new created logger
+    return NewLogger;
 }
 
 #endif // !CONSOLE_LOGGER
