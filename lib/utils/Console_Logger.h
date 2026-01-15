@@ -1,21 +1,44 @@
 #ifndef CONSOLE_LOGGER
 #define CONSOLE_LOGGER
 
-typedef struct {
-    void (*OutputLog)(char LogInput, void *self);
-    void (*OutputTypeLog)(char LogType, void *self);
+#include <math.h>
+
+typedef struct OutputLogger {
+    void (*OutputLog)(char *LogInput, char *LogColor);
+    void (*OutputTypeLog)(char *LogType);
 } OutputLogger;
 
-static void OutputTypeLog(char LogInput, void *self) {
-    #define LogOccurenceType ""
+/**
+ * 
+ * @param LogInput
+ */
+static char determineColorTypeLog(char *LogInput) {
+    if (LogInput != NULL) {
+        #define ColorCodecTemplate(CodecInteger) \033[##CodecInteger]
+        #define FormatColorCode(Codec_Number) \
+            static void Format() { \
+                int Formated = 0 \
+            } \
+            return
+        // Color type codec
+        #define LogColorType 0
 
+        
 
-
-    return LogOccurenceType;
+        if (LogColorType != NULL) {
+            return LogColorType;
+        }
+    }
 }
 
-static void OutputLog(char LogInput, void *self) {
-    
+/**
+ * @
+ */
+static void OutputLog(char *LogInput, char *LogColor) {
+    if (LogInput == NULL) return;
+    float ColorCode = determineColorTypeLog(NULL);
+
+
 }
 
 static OutputLogger CreateLogger() {
