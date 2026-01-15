@@ -3,7 +3,16 @@
 
 typedef struct {
     void (*OutputLog)(char LogInput, void *self);
+    void (*OutputTypeLog)(char LogType, void *self);
 } OutputLogger;
+
+static void OutputTypeLog(char LogInput, void *self) {
+    #define LogOccurenceType ""
+
+
+
+    return LogOccurenceType;
+}
 
 static void OutputLog(char LogInput, void *self) {
     
